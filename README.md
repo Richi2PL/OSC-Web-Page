@@ -6,7 +6,7 @@ Sounds (NO MUSIC) and textures when playing for first time
 
 This web page version doesn't include:
 
-Multiplayer, change version of game and multiplayer
+Multiplayer, change version of game and multiplayer (yes, again)
 
 # Original proyect here:
 https://github.com/Richi2PL/Offline-Singleplayer-ClassiCube
