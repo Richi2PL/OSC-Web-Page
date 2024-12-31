@@ -2,14 +2,11 @@
 
 This web page version includes:
 
-1-Sounds (NO MUSIC)
-2-Textures when playing for first time
+Sounds (NO MUSIC) and textures when playing for first time
 
 This web page version doesn't include:
 
-1-Multiplayer
-2-Change version of game
-3-Multiplayer
+Multiplayer, change version of game and multiplayer
 
 # Original proyect here:
 https://github.com/Richi2PL/Offline-Singleplayer-ClassiCube
