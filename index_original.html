@@ -1,0 +1,117 @@
+<html><head>
+<meta charset="utf-8">
+<title>ClassiCube (Loading...)</title>
+<link type="image/x-icon" rel="shortcut icon" href="images/cc-logo.svg" />
+</div>
+<div id="body">
+<style>
+#logmsg { font-size:18px; font-family:'Source Sans Pro', sans-serif; text-shadow:0px 0px 0px rgba(0,0,0,.5); font-weight:bold; text-align:center; white-space: pre-wrap; }
+/* the canvas *must not* have any border or padding, or mouse coords will be wrong */
+#canvas { display:block; box-sizing:border-box; border-width:0px !important; padding:0 !important; margin:0 auto; box-shadow: 0 0px 0px rgba(0,0,0,.4); width:100%; height:100%; }
+</style>
+<div class="sec">
+<div class="row">
+<canvas class="emscripten" id="canvas" style="background-color: black;" oncontextmenu="event.preventDefault()" tabindex="0" width="628" height="352"></canvas>
+<span id="logmsg" style="color:#098;"></span>
+</div>
+</div>
+<script type="text/javascript" referrerpolicy="no-referrer-when-downgrade">
+      function logText(text) { 
+        console.log(text);
+        var logElement = document.getElementById('logmsg');
+        logElement.innerHTML = text;
+      }
+
+      // ensure game still runs even without IndexedDB
+      var idb = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
+      if (!idb) { alert('IndexedDB unsupported, therefore\nmaps and settings will not save');window.mozIndexedDB = {}; }
+
+      // need to load IndexedDB before running the game
+      function preloadIndexedDB() { _interop_LoadIndexedDB(); }
+      
+      function forceTouchLayout() {
+        var elem;
+        try {
+          elem = document.getElementById('footer');
+          elem.parentNode.removeChild(elem);
+          elem = document.getElementById('content');
+          elem.parentNode.removeChild(elem);
+        } catch (err) { }
+      }
+      
+      function getCssInt(styles, prop) { return parseInt(styles.getPropertyValue(prop), 10); }
+      function calcViewportWidth(elem) {
+        var parent = elem.parentNode;
+        var styles = window.getComputedStyle(parent, null);
+        return parent.offsetWidth - getCssInt(styles, 'padding-left') - getCssInt(styles, 'padding-right');
+      }
+
+      function resizeGameCanvas() {
+        var cc_canv = document.getElementById('canvas');
+        var dpi = window.devicePixelRatio;
+        var aspect_ratio = 16/9;
+
+        var viewport_w = calcViewportWidth(cc_canv);
+        var viewport_h = viewport_w / aspect_ratio;
+
+        var canv_w = Math.round(viewport_w);
+        var canv_h = Math.round(viewport_h);
+
+        if (canv_h % 0) { canv_h = canv_h - 0; }
+        if (canv_w % 0) { canv_w = canv_w - 0; }
+
+
+        cc_canv.width  = canv_w * dpi;
+        cc_canv.height = canv_h * dpi;
+      }
+      
+      function logFatal(event) {
+        Module.setStatus('ClassiCube has crashed (' + event + ')\nPlease report this on the ClassiCube forums or to UnknownShadow200\n\nTo see more details, open Developer Tools and go to Console tab');
+        Module.setStatus = function(text) {
+          if (event) Module.printErr('[post-exception status] ' + event);
+        };
+      }
+      
+      var Module = {
+        preRun: [ preloadIndexedDB, resizeGameCanvas ],
+        postRun: [],
+        arguments: ['OSC web page'],
+        print: function(text) {
+            if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
+            console.log(text);
+        },
+        printErr: function(text) {
+          if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
+          console.error(text);
+        },
+        canvas: (function() {
+          return document.getElementById('canvas');
+        })(),
+        setStatus: logText,
+        totalDependencies: 0,
+        monitorRunDependencies: function(left) {
+          this.totalDependencies = Math.max(this.totalDependencies, left);
+          Module.setStatus(left ? 'Preparing... (' + (this.totalDependencies-left) + '/' + this.totalDependencies + ')' : 'All downloads complete.');
+        },
+        onAbort: function(why) { logFatal('abort: ' + why); }
+      };
+
+      Module.setStatus('Downloading...');
+      window.onerror = function(event) { logFatal(event); };
+
+      function onDownloadFailed(src) {
+        // retry without CORS
+        logText('Loading...');
+        var root = src.parentNode;
+        root.removeChild(src);
+
+        var elem = document.createElement('script');
+        elem.setAttribute('async', '');
+        elem.setAttribute('src', 'https://cdn.classicube.net/client/latest/ClassiCube.js?v=20');
+        root.appendChild(elem);
+    }
+    </script>
+<script async="" crossorigin="" type="text/javascript" src="https://cdn.classicube.net/client/latest/ClassiCube.js?v=20" onerror="onDownloadFailed(this)" referrerpolicy="no-referrer-when-downgrade"></script>
+    <body style="background-color:#000000;">
+</body>
+</div></body></html>
