@@ -1,0 +1,344 @@
+body {
+    background-color:#454545;
+}
+
+h2 {
+    color:#333;
+    border-bottom:1px solid rgba(0,0,0,.18);
+    padding:0px 0;
+    margin:0;
+    font-size:180%;
+}
+
+h3 {
+    color:#333;
+}
+
+h4 {
+    color:#333;
+}
+
+.post_feat p {
+    font-size: 1.2rem;
+}
+
+.post_feat h1, .post_feat h2, .post_feat h3, .post_feat h4 {
+    color:#fff;
+}
+
+#featured_bp h2 {
+    color:#222;
+    margin-top:5px;
+}
+
+/* BEGIN: .sec */
+
+.sec {
+    background:#f1ecfa;
+    padding:10px 0 5px;
+    margin-bottom:15px;
+}
+
+.sec h2 {
+    border-bottom:0px;
+
+}
+
+/* BEGIN: #forumtable */
+
+#forumtable {
+    border:0;
+}
+
+#forumtable tr td {
+    border-bottom: 1px solid #ccc;
+}
+
+#forumtable tr td + td {
+    border-left:0;
+}
+
+#forumtable tr td a {
+    font-weight:bold;
+    font-size:150%;
+}
+
+#forumtable tr td + td a {
+    font-size:100%;
+}
+
+#forumtable tr td p {
+    font-size:90%;
+    color:#777;
+}
+
+#forumtable tr td {
+    padding:10px;
+}
+
+#forumtable tr td p {
+    margin:0;
+}
+
+/* BEGIN: .pagination */
+
+.pagination {
+	font-size:0;
+}
+
+.pagination a.button {
+	padding:1rem 0 1.0625rem;
+	margin:0;
+}
+
+.pagination a.button.active {
+	cursor:default;
+	background-color: #875c9f;
+}
+
+/* BEGIN: .button.thread */
+
+.button.thread {
+	margin:0 0 .5em 0;
+}
+
+.button.transparent {
+	background:transparent;
+	color:#a482b7;
+}
+
+.button.transparent:hover, .button.transparent:focus {
+	background:transparent;
+	color:#9066a7;
+}
+
+html body #body .button, html body #body button, html body #body input[type="submit"] {
+    border-radius: 100px;
+}
+
+/* BEGIN: .threadbit */
+
+.threadbit span, .threadbit span a {
+	font-weight:400;
+	font-size:80%;
+}
+
+.threadbit a {
+	font-weight:400;
+	font-size:130%;
+}
+
+/* BEGIN: .breadcrumbs */
+
+ul.breadcrumbs {
+	margin:.5rem 0;
+    border-radius:100px;
+}
+
+/* BEGIN: #messages */
+
+#messages {
+    background:#c6edf0;
+    padding:15px 0;
+}
+
+/* BEGIN: #errors */
+
+#errors {
+    background:#f5d6d6;
+    padding:15px 0;
+}
+
+/* BEGIN: .post */
+
+.post {
+    margin:0;
+    border-bottom:1px dashed #aaa
+}
+
+.post h3 {
+    margin:0;
+    font-weight:bold;
+    font-size:145%;
+}
+
+/* BEGIN: #header */
+
+#header {
+    line-height:inherit;
+    background-color:#9873ac;
+}
+
+#header .row {
+    background:url(cc-cube-small.png) no-repeat 0px 0px;
+}
+
+#header h1, #header #nav a {
+    color:#fff;
+    font-family:'Source Sans Pro', sans-serif;
+    text-shadow:-1px 1px 1px rgba(0,0,0,.2);
+    margin:0;
+}
+
+#header h1 {
+    font-size:39px;
+    font-weight:900;
+    width:49%;
+    padding:0 15px 0 47px;
+}
+
+#header #nav a {
+    font-size:18px;
+    margin-left:12px;
+    font-weight:900;
+}
+
+#header .button:hover {
+    box-shadow:0 0 5px rgba(0,0,0,.1) inset;
+}
+
+#header #nav {
+    float:right;
+}
+
+#header #mnav_cont #navtoggle_btn {
+    float:right;
+    text-align:center;
+    width:56px;
+    font-size:20px;
+    color:#fff;
+    line-height:56px;
+    height:56px;
+    box-sizing:border-box;
+    text-shadow: -1px 1px 1px rgba(0,0,0,.2);
+    background:rgba(0,0,0,.2);
+}
+
+#header #mnav_cont #mnav {
+    max-height:0;
+    transition:max-height .2s linear;
+    background:rgba(0,0,0,.2);
+    overflow-y:hidden;
+    width:100%;
+}
+
+#header #mnav_cont #mnav a {
+    display:block;
+    padding:15px;
+    margin:0;
+    color:#fff;
+    font-weight:bold;
+    font-family:"Source Sans Pro", sans-serif;
+    text-shadow: -1px 1px 1px rgba(0,0,0,.2);
+    font-size:16px;
+}
+
+#header #mnav_cont #navtoggle:checked + #mnav {
+    max-height:500px;
+}
+
+/* BEGIN: #body */
+
+#body {
+    min-height:600px;
+    background:#fff;
+}
+
+#body2 {
+    background:#f5f2a7;
+    padding:15px 0;
+}
+
+/* BEGIN: #blofg */
+
+#blofg .posttitle {
+    margin: 10px 0 0;
+    padding: 10px;
+    border: 0;
+    background: rgba(0,0,0,.1);
+    border-radius: 10px;
+    font-weight: 100;
+    font-family: "Source Sans Pro", sans-serif;
+    background:#a482b7;
+    color:#fff;
+    
+}
+
+#blofg .postcontent {
+    padding: 10px;
+    margin: 0 10px 10px;
+    box-sizing: border-box;
+    border: 1px solid rgba(0,0,0,.1);
+    border-top-width: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* BEGIN: #footer */
+
+#footer {
+    padding:15px 0 0;
+    color:#999;
+    text-shadow:-1px 1px 1px rgba(0,0,0,.3);
+}
+
+#footer p {
+    font-size:90%;
+}
+
+#footer a {
+    display:block;
+    color:#ddd;
+    background:rgba(255,255,255,.2);
+    border-radius:100px;
+    margin-bottom:15px;
+    font-weight:bold;
+    padding:5px;
+}
+
+#footer a i {
+    background: rgba(0,0,0,.5);
+    width: 1.8em;
+    height: 1.8em;
+    display: inline-block;
+    vertical-align: baseline;
+    text-align: center;
+    border-radius: 30px;
+    line-height: 1.8em;
+    box-sizing: content-box;
+    transition: all .2s cubic-bezier(0,.01,0,.64);
+}
+
+#footer a:hover i {
+    background: #7E6586;
+}
+
+/* BEGIN: #github */
+
+#github {
+
+}
+
+#github .commits .commitinfo {
+    font-size:12px;
+    color:#777;
+    display:block;
+    margin-top:-.3em;
+}
+
+@media only screen and (max-width: 40em) { 
+    /* add padding for small screens */
+    .row {
+        padding:0 10px;
+    }
+
+    #header .row {
+        background-position:10px 0;
+        padding: 0;
+
+    }
+
+    #header h1 {
+        margin-left:10px;
+    }
+}
