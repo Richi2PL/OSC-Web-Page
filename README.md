@@ -1,4 +1,4 @@
-# Offline SIngleplayer ClassiCube (OSC) web page edition
+# Offline Singleplayer ClassiCube (OSC) web page edition
 
 This web page version includes:
 
@@ -10,3 +10,9 @@ Multiplayer, change version of game and multiplayer
 
 # Original proyect here:
 https://github.com/Richi2PL/Offline-Singleplayer-ClassiCube
+
+# Links for playing:
+
+https://richi2pl.github.io/index.html
+
+https://richi2pl.github.io/index_original.html
